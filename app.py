@@ -22,7 +22,7 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return 'Hello, World!'  # Changed this line to match the second piece of code
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -46,6 +46,6 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+# Removed the app.run() line. When deploying on Heroku, gunicorn will serve the app.
 if __name__ == "__main__":
     print("Starting server...")
-    app.run(debug=True)
