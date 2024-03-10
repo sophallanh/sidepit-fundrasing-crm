@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactions</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Interactions</h1>
+    <ul>
+        {% for interaction in interactions %}
+            <li>User ID: {{ interaction.user_id }}, Organization ID: {{ interaction.organization_id }}, Interaction Type: {{ interaction.interaction_type }}, Notes: {{ interaction.notes }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_interaction') }}">Add new interaction</a>
+</body>
+</html>

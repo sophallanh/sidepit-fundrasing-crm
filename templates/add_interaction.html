@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Interaction</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Add Interaction</h1>
+    <form method="POST">
+        <label for="user_id">User ID:</label><br>
+        <input type="text" id="user_id" name="user_id"><br>
+        <label for="organization_id">Organization ID:</label><br>
+        <input type="text" id="organization_id" name="organization_id"><br>
+        <label for="interaction_type">Interaction Type:</label><br>
+        <input type="text" id="interaction_type" name="interaction_type"><br>
+        <label for="notes">Notes:</label><br>
+        <textarea id="notes" name="notes"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
