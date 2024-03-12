@@ -14,7 +14,8 @@ def load_user(user_id):
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Applications/sidepit-fundraiser-crm/mydatabase.db'
+    # Use DATABASE_URL environment variable for PostgreSQL
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
     db.init_app(app)
@@ -51,7 +52,7 @@ def create_app():
 
     return app
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     app = create_app()
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
