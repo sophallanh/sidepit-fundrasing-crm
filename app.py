@@ -24,15 +24,12 @@ def load_user(user_id):
 
 # Create Flask app
 def create_app():
-    with app.app_context():
-        db.create_all()
-
     return app
 
 # Routes
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Hello Jay! Welcome to Sidepit FundraiserPro Pipeline CRM!'
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
